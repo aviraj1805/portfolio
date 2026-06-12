@@ -335,7 +335,7 @@ section { position: relative; }
 /* Content is VISIBLE by default. `.in` (added by observer) replays an entrance
    animation. If JS ever fails to add `.in`, content still shows — never hidden. */
 .reveal { opacity: 1; }
-.reveal.in { animation: revealUp 0.9s var(--ease) both; }
+.reveal.in { animation: revealUp 0.9s var(--ease) backwards; }
 @keyframes revealUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
 .reveal[data-d="1"].in { animation-delay: 0.06s; }
 .reveal[data-d="2"].in { animation-delay: 0.12s; }
