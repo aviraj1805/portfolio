@@ -158,6 +158,7 @@
 
 /* ---------- ID CARD TILT ---------- */
 (function tilt() {
+  if (window.matchMedia && window.matchMedia('(hover: none)').matches) return;
   const card = document.getElementById('idcard');
   if (!card) return;
   const wrap = card.parentElement;
@@ -262,4 +263,91 @@
     requestAnimationFrame(raf);
   }
   raf();
+})();
+
+/* ---------- SECTION-TITLE UNDERLINE DRAW-INS ---------- */
+(function titleLines() {
+  document.querySelectorAll('.section-title').forEach((t) => {
+    t.insertAdjacentHTML(
+      'beforeend',
+      '<svg class="title-line" viewBox="0 0 170 10" aria-hidden="true">' +
+        '<path d="M4 7 C 45 2, 120 2, 166 5"/></svg>'
+    );
+  });
+})();
+
+/* ---------- ARSENAL: category highlight filter ---------- */
+(function arsenal() {
+  const pills = [...document.querySelectorAll('.ars-pill')];
+  const tiles = [...document.querySelectorAll('.ars-tile')];
+  if (!pills.length || !tiles.length) return;
+  pills.forEach((pill) =>
+    pill.addEventListener('click', () => {
+      pills.forEach((p) => p.classList.toggle('is-on', p === pill));
+      const cat = pill.dataset.cat;
+      tiles.forEach((t) => {
+        const keep =
+          cat === 'all' || t.dataset.cat === cat || t.classList.contains('ars-tile--more');
+        t.classList.toggle('is-dim', !keep);
+      });
+    })
+  );
+})();
+
+/* ---------- JOURNEY CIRCUIT LINE (scroll-driven draw) ---------- */
+(function circuit() {
+  const sec = document.getElementById('journey');
+  const box = sec && sec.querySelector('.circuit');
+  const path = document.getElementById('circuitPath');
+  if (!sec || !box || !path) return;
+
+  const feats = [...sec.querySelectorAll('.feature')];
+
+  function layout() {
+    const br = box.getBoundingClientRect();
+    if (br.height < 10) return; // hidden at this breakpoint
+    box.querySelectorAll('.circuit-node').forEach((n) => n.remove());
+    feats.forEach((f) => {
+      const fr = f.getBoundingClientRect();
+      const n = document.createElement('span');
+      n.className = 'circuit-node';
+      n.style.top = (fr.top - br.top + fr.height / 2) + 'px';
+      box.appendChild(n);
+    });
+  }
+  layout();
+  window.addEventListener('resize', layout);
+  window.addEventListener('load', layout);
+
+  /* with vector-effect="non-scaling-stroke", dashes are measured in SCREEN
+     pixels — so the dash length must be the rendered height, not the
+     1000-unit viewBox length, or the draw runs out mid-section. */
+  let len = 0;
+  function measure() {
+    len = Math.max(box.offsetHeight, 1);
+    path.style.strokeDasharray = len;
+  }
+  measure();
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+
+  const head = document.getElementById('circuitHead');
+
+  function onScroll() {
+    const br = box.getBoundingClientRect();
+    /* tip tracks a fixed line 80% down the viewport — it moves at exactly
+       scroll speed and reaches the section's end as it scrolls past. */
+    const p = Math.min(1, Math.max(0, (window.innerHeight * 0.8 - br.top) / br.height));
+    path.style.strokeDashoffset = (len * (1 - p)).toFixed(1);
+    if (head) {
+      head.style.top = (p * br.height) + 'px';
+      head.classList.toggle('on', p > 0.005 && p < 0.998);
+    }
+    box.querySelectorAll('.circuit-node').forEach((n, i) => {
+      const nodeP = (parseFloat(n.style.top) || 0) / Math.max(br.height, 1);
+      n.classList.toggle('lit', p >= nodeP);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
