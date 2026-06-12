@@ -26,6 +26,15 @@
   <div class="bg-vignette"></div>
 </div>
 
+<!-- shared SVG filter defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="swooshGlow" x="-50%" y="-300%" width="200%" height="700%">
+      <feGaussianBlur stdDeviation="3.5"/>
+    </filter>
+  </defs>
+</svg>
+
 <!-- ===================== BOOT OVERLAY ===================== -->
 <div class="boot" id="boot">
   <div class="boot__reactor"><div class="boot__core"></div></div>
@@ -70,9 +79,9 @@
       </div>
 
       <h1 class="hero__h1">
-        <span class="l" style="font-size: 94px">AI Engineer.</span>
-        <span class="l"><span class="muted" style="font-size: 94px">Builder.</span></span>
-        <span class="l" style="font-size: 96px"><span class="amber" style="font-size: 100px">Coder.</span></span>
+        <span class="l">AI Engineer.</span>
+        <span class="l"><span class="muted">Builder.</span></span>
+        <span class="l"><span class="amber amber--swoosh">Coder.<svg class="hero-swoosh" viewBox="0 0 320 24" preserveAspectRatio="none" aria-hidden="true"><path class="sw sw--glow" d="M8 16 C 90 7, 230 7, 312 14" style="opacity: 0"/><path class="sw" d="M8 16 C 90 7, 230 7, 312 14"/></svg></span></span>
       </h1>
 
       <div class="hero__type hero__rise" data-d="2">
@@ -110,11 +119,21 @@
 
     <!-- INTERACTIVE ID CARD -->
     <div class="hero__col idwrap">
+      <svg class="hero-orbit" viewBox="0 0 600 600" aria-hidden="true">
+        <g class="orbit">
+          <circle class="ring ring--dash" cx="300" cy="300" r="284"/>
+          <circle class="sat" cx="300" cy="16" r="4"/>
+        </g>
+        <g class="orbit orbit--rev">
+          <circle class="ring ring--faint" cx="300" cy="300" r="238"/>
+          <circle class="sat" cx="538" cy="300" r="3"/>
+        </g>
+      </svg>
       <div class="idcard" id="idcard">
         <div class="idcard__notch"></div>
         <div class="idcard__top">
-          <div class="idcard__org" style="font-family: sans-serif; font-size: 10px">ACCESS · BUILDER PASS<br/><b>AI &amp; DATA SCIENCE</b></div>
-          <div class="idcard__chip" style="background-size: cover"></div>
+          <div class="idcard__org">ACCESS · BUILDER PASS<br/><b>AI &amp; DATA SCIENCE</b></div>
+          <div class="idcard__chip"></div>
         </div>
         <div class="frame idcard__photo" data-img="assets/profile.png">
           <img src="assets/profile.png" alt="Aviraj Virape" />
@@ -126,7 +145,7 @@
           </div>
         </div>
         <div class="idcard__name">Aviraj Virape</div>
-        <div class="idcard__role">AI Engineer · Founder</div>
+        <div class="idcard__role">AI ENGINEER · DEVELOPER</div>
         <div class="idcard__meta">
           <div>ID<b>AV–2026</b></div>
           <div>STATUS<b style="color:var(--accent)">Building</b></div>
@@ -138,8 +157,7 @@
   </div>
 
   <div class="scrollcue">
-    <span>
-</span><span class="arr">↓</span>
+    <span>scroll</span><span class="arr">↓</span>
   </div>
 </section>
 
@@ -169,7 +187,7 @@
 
     <div class="about__side">
       <div class="frame about__photo reveal" data-d="2" data-img="assets/profile-large.png">
-          <img src="assets/profile-large.png" alt="Aviraj Virape" />
+          <img src="assets/profile-large.png" alt="Aviraj Virape" loading="lazy" decoding="async" />
         <div class="frame__ph">
           <span class="pin">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
@@ -196,49 +214,101 @@
       <p class="section-sub reveal" data-d="2">Every skill here was earned on a real project — not a tutorial.</p>
     </div>
 
-    <div class="arsenal__grid">
-      <div class="arscard reveal" data-d="1">
-        <div class="arscard__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a4 4 0 0 0-4 4 4 4 0 0 0-2 7 4 4 0 0 0 2 7 4 4 0 0 0 8 0 4 4 0 0 0 2-7 4 4 0 0 0-2-7 4 4 0 0 0-4-4Z"/><path d="M12 6v12M8 9h8M8 15h8"/></svg>
-        </div>
-        <h3>Artificial Intelligence</h3>
-        <ul class="arscard__list">
-          <li>Machine Learning</li><li>Deep Learning</li><li>LLM Fine-Tuning</li>
-          <li>RAG Pipelines</li><li>Agentic AI</li><li>Prompt Engineering</li>
-        </ul>
-      </div>
+    <div class="ars-filters reveal" data-d="2">
+      <button class="ars-pill is-on" data-cat="all" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg>
+        All
+      </button>
+      <button class="ars-pill" data-cat="foundations" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 5H6l7 7-7 7h12"/></svg>
+        Foundations
+      </button>
+      <button class="ars-pill" data-cat="data" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 20v-6M11 20V8M17 20v-9M3 20h18"/></svg>
+        Data Science
+      </button>
+      <button class="ars-pill" data-cat="ai" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z"/></svg>
+        AI &amp; ML
+      </button>
+      <button class="ars-pill" data-cat="tools" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        Tools &amp; Platforms
+      </button>
+    </div>
 
-      <div class="arscard reveal" data-d="2">
-        <div class="arscard__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg>
-        </div>
-        <h3>Data &amp; Analysis</h3>
-        <ul class="arscard__list">
-          <li>Python</li><li>NumPy</li><li>Pandas</li>
-          <li>Matplotlib</li><li>SQL</li><li>EDA</li>
-        </ul>
+    <div class="ars-tiles reveal" data-d="3">
+      <div class="ars-tile" data-cat="foundations" style="--i:0">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M18 5H6l7 7-7 7h12"/></svg></span>
+        <span class="ars-tile__name">Maths</span>
       </div>
-
-      <div class="arscard reveal" data-d="3">
-        <div class="arscard__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
-        </div>
-        <h3>Build &amp; Deploy</h3>
-        <ul class="arscard__list">
-          <li>FastAPI</li><li>Docker</li><li>PostgreSQL</li>
-          <li>MongoDB</li><li>Git</li><li>REST APIs</li>
-        </ul>
+      <div class="ars-tile" data-cat="foundations" style="--i:1">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="5" r="2.4"/><circle cx="5.5" cy="19" r="2.4"/><circle cx="18.5" cy="19" r="2.4"/><path d="M11 7.2 6.6 16.9M13 7.2l4.4 9.7"/></svg></span>
+        <span class="ars-tile__name">DSA</span>
       </div>
-
-      <div class="arscard reveal" data-d="4">
-        <div class="arscard__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
-        </div>
-        <h3>Languages</h3>
-        <ul class="arscard__list">
-          <li>Python</li><li>C++</li><li>JavaScript</li>
-          <li>TypeScript</li><li></li>
-        </ul>
+      <div class="ars-tile" data-cat="foundations" style="--i:2">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 20v-6M11 20V8M17 20v-9M3 20h18"/></svg></span>
+        <span class="ars-tile__name">Data Analysis</span>
+      </div>
+      <div class="ars-tile" data-cat="data" style="--i:3">
+        <span class="ars-tile__icon"><img src="https://cdn.simpleicons.org/python/f2a93b" alt="Python" loading="lazy"/></span>
+        <span class="ars-tile__name">Python</span>
+      </div>
+      <div class="ars-tile" data-cat="data" style="--i:4">
+        <span class="ars-tile__icon"><img src="https://cdn.simpleicons.org/numpy/f2a93b" alt="NumPy" loading="lazy"/></span>
+        <span class="ars-tile__name">NumPy</span>
+      </div>
+      <div class="ars-tile" data-cat="data" style="--i:5">
+        <span class="ars-tile__icon"><img src="https://cdn.simpleicons.org/pandas/f2a93b" alt="Pandas" loading="lazy"/></span>
+        <span class="ars-tile__name">Pandas</span>
+      </div>
+      <div class="ars-tile" data-cat="data" style="--i:6">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg></span>
+        <span class="ars-tile__name">Matplotlib</span>
+      </div>
+      <div class="ars-tile" data-cat="data" style="--i:7">
+        <span class="ars-tile__icon"><img src="https://cdn.simpleicons.org/mysql/f2a93b" alt="MySQL" loading="lazy"/></span>
+        <span class="ars-tile__name">SQL · MySQL</span>
+      </div>
+      <div class="ars-tile" data-cat="ai" style="--i:8">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2a4 4 0 0 0-4 4 4 4 0 0 0-2 7 4 4 0 0 0 2 7 4 4 0 0 0 8 0 4 4 0 0 0 2-7 4 4 0 0 0-2-7 4 4 0 0 0-4-4Z"/><path d="M12 6v12M8 9h8M8 15h8"/></svg></span>
+        <span class="ars-tile__name">Machine Learning</span>
+      </div>
+      <div class="ars-tile" data-cat="ai" style="--i:9">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 4.5-8 4.5-8-4.5L12 3Z"/><path d="M4 12l8 4.5 8-4.5M4 16.5 12 21l8-4.5"/></svg></span>
+        <span class="ars-tile__name">Deep Learning</span>
+      </div>
+      <div class="ars-tile" data-cat="ai" style="--i:10">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z"/><path d="M19 3.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8Z"/></svg></span>
+        <span class="ars-tile__name">GenAI</span>
+      </div>
+      <div class="ars-tile" data-cat="ai" style="--i:11">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="12" height="16" rx="2"/><path d="M8 8h4M8 12h4"/><circle cx="17" cy="17" r="4"/><path d="m20 20 2 2"/></svg></span>
+        <span class="ars-tile__name">RAG</span>
+      </div>
+      <div class="ars-tile" data-cat="ai" style="--i:12">
+        <span class="ars-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="6" r="2"/><circle cx="19.5" cy="6" r="2"/><circle cx="12" cy="20.5" r="2"/><path d="M6.2 7.3 9.8 10.4M17.8 7.3 14.2 10.4M12 15v3.5"/></svg></span>
+        <span class="ars-tile__name">Agentic AI</span>
+      </div>
+      <div class="ars-tile" data-cat="tools" style="--i:13">
+        <span class="ars-tile__icon"><img src="https://cdn.simpleicons.org/docker/f2a93b" alt="Docker" loading="lazy"/></span>
+        <span class="ars-tile__name">Docker</span>
+      </div>
+      <div class="ars-tile" data-cat="tools" style="--i:14">
+        <span class="ars-tile__icon"><img src="https://cdn.simpleicons.org/github/f2a93b" alt="GitHub" loading="lazy"/></span>
+        <span class="ars-tile__name">GitHub</span>
+      </div>
+      <div class="ars-tile" data-cat="tools" style="--i:15">
+        <span class="ars-tile__icon"><img src="https://cdn.simpleicons.org/leetcode/f2a93b" alt="LeetCode" loading="lazy"/></span>
+        <span class="ars-tile__name">LeetCode</span>
+      </div>
+      <div class="ars-tile" data-cat="tools" style="--i:16">
+        <span class="ars-tile__icon"><img src="https://cdn.simpleicons.org/kaggle/f2a93b" alt="Kaggle" loading="lazy"/></span>
+        <span class="ars-tile__name">Kaggle</span>
+      </div>
+      <div class="ars-tile ars-tile--more" data-cat="all" style="--i:17">
+        <span class="ars-tile__plus">+∞</span>
+        <span class="ars-tile__name">Always learning</span>
       </div>
     </div>
   </div>
@@ -255,7 +325,7 @@
     <!-- Mission 01 -->
     <article class="mission">
       <div class="frame mission__media reveal" data-img="assets/projects/studentgpt.png">
-          <img src="assets/projects/studentgpt.png" alt="StudentGPT" />
+          <img src="assets/projects/studentgpt.png" alt="StudentGPT" loading="lazy" decoding="async" />
         <div class="frame__ph">
           <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span>
           <span>projects/studentgpt.png</span>
@@ -291,7 +361,7 @@
     <!-- Mission 02 -->
     <article class="mission">
       <div class="frame mission__media reveal" data-img="assets/projects/tesla.png">
-          <img src="assets/projects/tesla.png" alt="Tesla Stock Prediction" />
+          <img src="assets/projects/tesla.png" alt="Tesla Stock Prediction" loading="lazy" decoding="async" />
         <div class="frame__ph">
           <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l5-6 4 3 6-8"/><path d="M3 21h18"/></svg></span>
           <span>projects/tesla.png</span>
@@ -323,7 +393,7 @@
     <!-- Mission 03 -->
     <article class="mission">
       <div class="frame mission__media reveal" data-img="assets/projects/found-lost.png">
-          <img src="assets/projects/found-lost.png" alt="Found-Lost Item Portal" />
+          <img src="assets/projects/found-lost.png" alt="Found-Lost Item Portal" loading="lazy" decoding="async" />
         <div class="frame__ph">
           <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
           <span>projects/found-lost.png</span>
@@ -357,6 +427,10 @@
 <!-- ===================== JOURNEY (Mahaguru / Innovexis / Research) ===================== -->
 <section class="journey section-pad" id="journey">
   <div class="wrap">
+    <div class="circuit" aria-hidden="true">
+      <svg viewBox="0 0 2 1000" preserveAspectRatio="none"><path id="circuitPath" d="M1 0 V 1000" vector-effect="non-scaling-stroke"/></svg>
+      <span class="circuit-head" id="circuitHead"></span>
+    </div>
     <div class="section-head">
       <span class="label reveal" ><span class="dot"></span>The Journey</span>
       <h2 class="section-title reveal" data-d="1">Ventures, industry,<br/>and research.</h2>
@@ -383,7 +457,7 @@
         </div>
         <div class="feature__media">
           <div class="frame" data-img="assets/mahaguru.png">
-          <img src="assets/mahaguru.png" alt="Mahaguru AI" />
+          <img src="assets/mahaguru.png" alt="Mahaguru AI" loading="lazy" decoding="async" />
             <div class="frame__ph">
               <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="M12 12v9M12 12 4 7.5M12 12l8-4.5"/></svg></span>
               <span>mahaguru.png — logo / product shot</span>
@@ -406,14 +480,14 @@
             can't: how to ship under pressure, communicate trade-offs, and turn
             ambiguity into working software.
           </p>
-          <div class="feature__metrics" style="font-family: sans-serif">
+          <div class="feature__metrics">
             <div class="feature__metric"><div class="n">3 mo</div><div class="l">Duration</div></div>
             <div class="feature__metric"><div class="n">6</div><div class="l">Projects<br/>shipped</div></div>
           </div>
         </div>
         <div class="feature__media">
           <div class="frame" data-img="assets/innovexis.jpg">
-          <img src="assets/innovexis.jpg" alt="Innovexis internship certificate" />
+          <img src="assets/innovexis.jpg" alt="Innovexis internship certificate" loading="lazy" decoding="async" />
             <div class="frame__ph">
               <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/></svg></span>
               <span>innovexis.jpg — internship certificate</span>
@@ -444,7 +518,7 @@
         </div>
         <div class="feature__media">
           <div class="frame" data-img="assets/ieee-certificate.jpg">
-          <img src="assets/ieee-certificate.jpg" alt="IEEE conference certificate" />
+          <img src="assets/ieee-certificate.jpg" alt="IEEE conference certificate" loading="lazy" decoding="async" />
             <div class="frame__ph">
               <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="5"/><path d="M9 13l-1.5 7L12 18l4.5 2L15 13"/></svg></span>
               <span>ieee-certificate.jpg — IEEE certificate</span>
@@ -489,9 +563,9 @@
     </p>
 
     <div class="contact__links">
-      <a class="clink reveal" data-d="1" href="mailto:virapeaviraj@gmail.com">
+      <a class="clink reveal" data-d="1" href="/cdn-cgi/l/email-protection#44322d3625342125322d36252e042329252d286a272b29">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        <span class="k">Email</span><span class="v">virapeaviraj@gmail.com</span>
+        <span class="k">Email</span><span class="v"><span class="__cf_email__" data-cfemail="d4a2bda6b5a4b1b5a2bda6b5be94b3b9b5bdb8fab7bbb9">[email&#160;protected]</span></span>
       </a>
       <a class="clink reveal" data-d="2" href="https://www.linkedin.com/in/avirajvirape/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21H21v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H13z"/></svg>
@@ -505,10 +579,14 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 4 7 11l7 7M9 12h11"/></svg>
         <span class="k">LeetCode</span><span class="v">/aviraj_virape</span>
       </a>
+      <a class="clink reveal" data-d="5" href="https://www.instagram.com/aviraj_virape/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none"/></svg>
+        <span class="k">Instagram</span><span class="v">/aviraj_virape</span>
+      </a>
     </div>
 
     <div class="contact__cta reveal" data-d="3">
-      <a class="btn btn--primary" href="mailto:virapeaviraj@gmail.com">
+      <a class="btn btn--primary" href="/cdn-cgi/l/email-protection#e7918e9586978286918e95868da7808a868e8bc984888a">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         Start a conversation
       </a>
@@ -522,6 +600,11 @@
   </div>
 </section>
 
-<script src="js/main.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
 </body>
 </html>
+<style id="__om-edit-overrides">
+#about :is(h1,h2,h3,h4,h5,h6) path { opacity: 0 !important }
+#missions :is(h1,h2,h3,h4,h5,h6) path { opacity: 0.09 !important }
+#missions :is(h1,h2,h3,h4,h5,h6) path { opacity: 0 !important }
+</style>
