@@ -937,6 +937,8 @@
 .hero-orbit .sat { fill: var(--accent); }
 .hero-orbit .orbit { transform-origin: 300px 300px; animation: orbitSpin 70s linear infinite; }
 .hero-orbit .orbit--rev { animation-duration: 95s; animation-direction: reverse; }
+[data-theme="light"] .hero-orbit .ring { stroke: rgba(217, 119, 6, 0.18); }
+[data-theme="light"] .hero-orbit .ring--faint { stroke: rgba(26,26,24,0.06); }
 @keyframes orbitSpin { to { transform: rotate(360deg); } }
 
 /* Journey circuit line (desktop only; scroll-driven) */
@@ -980,6 +982,52 @@
   transition: opacity 0.3s var(--ease);
 }
 .circuit-head.on { opacity: 1; }
+
+/* ============================================================
+   LIGHT MODE OVERRIDES — sections
+   ============================================================ */
+[data-theme="light"] .ars-tile {
+  background: linear-gradient(165deg, #f5ede0 0%, #efe7d8 48%, #e8e1d2 100%);
+  border: 1px solid rgba(217, 119, 6, 0.12);
+}
+[data-theme="light"] .ars-tile::before {
+  background: radial-gradient(85% 55% at 50% 0%, rgba(217, 119, 6, 0.08), transparent 72%);
+}
+[data-theme="light"] .ars-tile:hover {
+  border-color: rgba(217, 119, 6, 0.5);
+  box-shadow: 0 22px 55px -16px rgba(217, 119, 6, 0.18);
+}
+
+[data-theme="light"] .clink {
+  background: linear-gradient(168deg, #efe7d8 0%, #e8e1d2 50%, #dfdbcd 100%);
+  border: 1px solid rgba(217, 119, 6, 0.12);
+}
+[data-theme="light"] .clink::before {
+  background: radial-gradient(85% 55% at 50% 0%, rgba(217, 119, 6, 0.08), transparent 72%);
+}
+[data-theme="light"] .clink:hover {
+  border-color: rgba(217, 119, 6, 0.5);
+  box-shadow: 0 22px 55px -16px rgba(217, 119, 6, 0.18);
+}
+
+[data-theme="light"] .idcard {
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.1), 0 0 0 1px rgba(26,26,24,0.08);
+}
+[data-theme="light"] .idcard::before {
+  background: radial-gradient(circle at var(--mx) var(--my), rgba(217, 119, 6, 0.06) 0%, transparent 60%);
+}
+[data-theme="light"] .idcard__chip {
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+  box-shadow: 0 2px 12px rgba(217, 119, 6, 0.2);
+}
+
+[data-theme="light"] .vision::before {
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(217, 119, 6, 0.04) 0%, transparent 70%);
+}
+
+[data-theme="light"] .mission__media::before {
+  background: linear-gradient(105deg, transparent, rgba(26,26,24,0.12), transparent);
+}
 
 @media (prefers-reduced-motion: reduce) {
   .hero-orbit .orbit { animation: none; }

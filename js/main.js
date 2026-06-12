@@ -19,6 +19,45 @@
   setTimeout(revealChrome, 4200);
 })();
 
+/* ---------- THEME TOGGLE (Dark/Light mode) ---------- */
+(function themeToggle() {
+  const html = document.documentElement;
+  const themeBtn = document.getElementById('themeToggle');
+  const THEME_KEY = 'av-theme-preference';
+
+  function initTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    let theme = saved || 'dark';
+    
+    if (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      theme = 'light';
+    }
+    
+    applyTheme(theme);
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      html.setAttribute('data-theme', 'light');
+    } else {
+      html.removeAttribute('data-theme');
+    }
+    localStorage.setItem(THEME_KEY, theme);
+  }
+
+  function toggleTheme() {
+    const current = html.getAttribute('data-theme');
+    const newTheme = current === 'light' ? 'dark' : 'light';
+    applyTheme(newTheme);
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener('click', toggleTheme);
+  }
+
+  initTheme();
+})();
+
 /* ---------- image frames: load real file, fallback to placeholder ---------- */
 (function initFrames() {
   document.querySelectorAll('.frame[data-img]').forEach((frame) => {
