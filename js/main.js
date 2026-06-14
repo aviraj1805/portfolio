@@ -19,45 +19,6 @@
   setTimeout(revealChrome, 4200);
 })();
 
-/* ---------- THEME TOGGLE (Dark/Light mode) ---------- */
-(function themeToggle() {
-  const html = document.documentElement;
-  const themeBtn = document.getElementById('themeToggle');
-  const THEME_KEY = 'av-theme-preference';
-
-  function initTheme() {
-    const saved = localStorage.getItem(THEME_KEY);
-    let theme = saved || 'dark';
-    
-    if (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      theme = 'light';
-    }
-    
-    applyTheme(theme);
-  }
-
-  function applyTheme(theme) {
-    if (theme === 'light') {
-      html.setAttribute('data-theme', 'light');
-    } else {
-      html.removeAttribute('data-theme');
-    }
-    localStorage.setItem(THEME_KEY, theme);
-  }
-
-  function toggleTheme() {
-    const current = html.getAttribute('data-theme');
-    const newTheme = current === 'light' ? 'dark' : 'light';
-    applyTheme(newTheme);
-  }
-
-  if (themeBtn) {
-    themeBtn.addEventListener('click', toggleTheme);
-  }
-
-  initTheme();
-})();
-
 /* ---------- image frames: load real file, fallback to placeholder ---------- */
 (function initFrames() {
   document.querySelectorAll('.frame[data-img]').forEach((frame) => {
@@ -389,4 +350,29 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+})();
+
+/* ---------- THEME TOGGLE (light / dark) ---------- */
+(function theme() {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  const root = document.documentElement;
+
+  function apply(mode) {
+    if (mode === 'light') root.setAttribute('data-theme', 'light');
+    else root.removeAttribute('data-theme');
+    btn.setAttribute('aria-pressed', mode === 'light');
+    // circuit dash length depends on rendered height; nudge a recompute
+    window.dispatchEvent(new Event('resize'));
+  }
+
+  let saved = 'dark';
+  try { saved = localStorage.getItem('av_theme') || 'dark'; } catch (e) {}
+  apply(saved);
+
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    try { localStorage.setItem('av_theme', next); } catch (e) {}
+    apply(next);
+  });
 })();
