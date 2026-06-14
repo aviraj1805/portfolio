@@ -7,6 +7,15 @@
 <meta name="description" content="Aviraj Virape — Final-year AI &amp; Data Science engineer. Founder, IEEE-published researcher, builder of ML and GenAI systems." />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/sections.css" />
+<script>
+  /* apply saved theme before first paint to avoid a flash */
+  (function () {
+    try {
+      var t = localStorage.getItem('av_theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
@@ -57,23 +66,11 @@
       <a class="nav__link" href="#journey" data-sec="journey">Journey</a>
       <a class="nav__link" href="#contact" data-sec="contact">Contact</a>
     </div>
-    <button class="nav__theme" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">
-      <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-      <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-    </button>
     <a class="nav__cta" href="https://drive.google.com/file/d/1mUGjSUHrKTfsiqO-nBWFhmG-vFfdRcrh/view?usp=sharing" target="_blank" rel="noopener">Resume ↗</a>
+    <button class="nav__theme" id="themeToggle" type="button" aria-label="Toggle light or dark mode" title="Toggle theme">
+      <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.2v2.2M12 19.6v2.2M4.4 4.4l1.6 1.6M18 18l1.6 1.6M2.2 12h2.2M19.6 12h2.2M4.4 19.6l1.6-1.6M18 6l1.6-1.6"/></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a6.5 6.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
     <div class="nav__burger" id="burger"><span></span><span></span><span></span></div>
   </div>
   <div class="nav__mobile" id="navMobile">
@@ -579,9 +576,9 @@
     </p>
 
     <div class="contact__links">
-      <a class="clink reveal" data-d="1" href="/cdn-cgi/l/email-protection#44322d3625342125322d36252e042329252d286a272b29">
+      <a class="clink reveal" data-d="1" href="/cdn-cgi/l/email-protection#b4c2ddc6d5c4d1d5c2ddc6d5def4d3d9d5ddd89ad7dbd9">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        <span class="k">Email</span><span class="v"><span class="__cf_email__" data-cfemail="d4a2bda6b5a4b1b5a2bda6b5be94b3b9b5bdb8fab7bbb9">[email&#160;protected]</span></span>
+        <span class="k">Email</span><span class="v"><span class="__cf_email__" data-cfemail="9aecf3e8fbeafffbecf3e8fbf0dafdf7fbf3f6b4f9f5f7">[email&#160;protected]</span></span>
       </a>
       <a class="clink reveal" data-d="2" href="https://www.linkedin.com/in/avirajvirape/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21H21v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H13z"/></svg>
@@ -602,7 +599,7 @@
     </div>
 
     <div class="contact__cta reveal" data-d="3">
-      <a class="btn btn--primary" href="/cdn-cgi/l/email-protection#e7918e9586978286918e95868da7808a868e8bc984888a">
+      <a class="btn btn--primary" href="/cdn-cgi/l/email-protection#e89e819a89988d899e819a8982a88f85898184c68b8785">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
         Start a conversation
       </a>
