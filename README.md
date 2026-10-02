@@ -2,9 +2,9 @@
 
 > *"I don't wait for the future. I build it."*
 
-A personal portfolio website showcasing my work as an **AI Engineer, Builder, and Developer** — built from scratch with vanilla HTML, CSS, and JavaScript.
+Personal portfolio of **Aviraj Virape**, a final-year AI & Data Science student (CGPA 9.2) who builds end-to-end machine learning: EDA, scikit-learn / XGBoost models, and deployed apps. Built from scratch with vanilla HTML, CSS, and JavaScript.
 
-🔗 **Live:** [portfolio-aviraj1805s-projects.app](https://aviraj1805.github.io/portfolio/)
+🔗 **Live:** [aviraj1805.github.io/portfolio](https://aviraj1805.github.io/portfolio/)
 
 ---
 
@@ -13,37 +13,36 @@ A personal portfolio website showcasing my work as an **AI Engineer, Builder, an
 | Section | Description |
 |---|---|
 | **Hero** | Intro with animated ID card and role typewriter |
-| **About** | My story, background, and key stats |
-| **Arsenal** | Skills across Foundations, Data Science, AI/ML, and Tools |
-| **Missions** | Featured projects — StudentGPT, Tesla Stock Prediction, Found-Lost Portal |
-| **Journey** | Startup (Mahaguru AI), internship (Innovexis), and IEEE research |
-| **Contact** | Links to email, LinkedIn, GitHub, LeetCode, Instagram |
+| **About** | Background and key stats (CGPA, LeetCode, live apps) |
+| **Arsenal** | Skills across Foundations, Data Science, AI & ML, and Tools |
+| **Missions** | Live projects — Customer Churn Prediction, CreditWise, IAMARS |
+| **Journey** | Startup (Mahaguru AI), internship (Innovexis), and INMEC-2026 research |
+| **Contact** | Email, LinkedIn, GitHub, LeetCode, Instagram |
 
 ---
 
 ## Projects
 
-### StudentGPT
-A RAG-powered study companion that reads your syllabus and answers from your own notes and textbooks — no hallucinations.
-`Python` `LLM` `RAG` `FastAPI`
+### Customer Churn Prediction — Kaggle Playground S6E3
+XGBoost and LightGBM on ~594K telecom records with 5-fold stratified CV; XGBoost reached 0.916 mean ROC-AUC.
+[Live demo](https://churn-predictor-aviraj.onrender.com/) · [Source](https://github.com/aviraj1805/Customer-Churn-Prediction)
+`Python` `XGBoost` `LightGBM` `scikit-learn` `Pandas` `Seaborn`
 
-### Tesla Stock Prediction
-Time-series forecasting of TSLA closing prices using feature engineering across technical indicators.
-`Python` `Pandas` `NumPy` `Scikit-learn` `Matplotlib`
+### CreditWise — Loan Approval Prediction
+Class-balanced Random Forest in a scikit-learn pipeline: 0.91 F1 and 0.98 ROC-AUC, deployed as a Streamlit app with confidence scores and feature importance.
+[Live demo](https://creditwiseloanapprovall.streamlit.app/) · [Source](https://github.com/aviraj1805/CreditWise-Loan-Approval-System)
+`Python` `scikit-learn` `Pandas` `NumPy` `Streamlit`
 
-### Found-Lost Item Portal
-Full-stack campus lost-and-found platform with image-based item matching and a moderation workflow.
-`FastAPI` `PostgreSQL` `Python` `Docker`
+### IAMARS — Drone Detection and Tracking
+YOLOv8n fine-tuned on VisioDECT (0.965 mAP@0.5 on a 1,800-image held-out set), ByteTrack tracking, 88.5 FPS on an RTX 2050.
+[Live demo](https://huggingface.co/spaces/AvirajV/iamars-drone-tracking) · [Source](https://github.com/aviraj1805/intelligent-aerial-monitoring)
+`Python` `YOLOv8` `ByteTrack` `OpenCV` `NumPy`
 
 ---
 
 ## Tech Stack
 
-![HTML](https://img.shields.io/badge/HTML-38.6%25-orange?style=flat-square)
-![CSS](https://img.shields.io/badge/CSS-46.8%25-blue?style=flat-square)
-![JavaScript](https://img.shields.io/badge/JavaScript-14.6%25-yellow?style=flat-square)
-
-Built with **zero frameworks** — pure HTML, CSS, and vanilla JS. Deployed on **Vercel**.
+Built with **zero frameworks** — pure HTML, CSS, and vanilla JS. Deployed on **GitHub Pages**.
 
 ---
 
@@ -61,7 +60,7 @@ No build step. No dependencies. Just open `index.html`.
 
 ## Connect
 
-- Email — [avirajvirape@gmail.com](mailto:avirajvirape@gmail.com)
+- Email — [virapeaviraj@gmail.com](mailto:virapeaviraj@gmail.com)
 - LinkedIn — [/in/avirajvirape](https://www.linkedin.com/in/avirajvirape/)
 - GitHub — [/aviraj1805](https://github.com/aviraj1805)
 - LeetCode — [/aviraj_virape](https://leetcode.com/u/aviraj_virape/)

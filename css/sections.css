@@ -556,6 +556,35 @@ html[data-theme="light"] .ars-tile__name { text-shadow: none; }
 .mission__link svg { width: 14px; height: 14px; }
 .mission__link:hover { color: var(--accent); }
 
+/* Thumbnail is a link to the live app */
+a.mission__media { display: block; color: inherit; text-decoration: none; }
+a.mission__media:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* "Live" badge next to the project number */
+.mission__no { display: flex; align-items: center; gap: 12px; }
+.mission__live {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 9px; border-radius: 999px;
+  border: 1px solid var(--border); color: var(--accent);
+  letter-spacing: 0.14em;
+}
+.mission__live .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 8px var(--accent);
+}
+.mission__desc b { color: var(--text); font-weight: 600; }
+.mission__note {
+  margin-top: 12px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+.missions__more { display: flex; justify-content: center; margin-top: 24px; }
+
+/* Section titles in About / Missions render without the drawn underline
+   (moved here from an inline <style> that sat outside </html>) */
+#about :is(h1,h2,h3,h4,h5,h6) path,
+#missions :is(h1,h2,h3,h4,h5,h6) path { opacity: 0 !important; }
+
 /* Alternate layout: odd missions — image right */
 .mission:nth-child(even) .mission__media { order: 2; }
 .mission:nth-child(even) .mission__body  { order: 1; }
@@ -1013,3 +1042,4 @@ html[data-theme="light"] .clink:hover {
   .hero-orbit .orbit { animation: none; }
   .hero-swoosh .sw, .title-line path { stroke-dashoffset: 0; animation: none; }
 }
+.feature__body > .mission__link { margin-top: 18px; }

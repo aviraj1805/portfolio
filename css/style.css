@@ -368,7 +368,7 @@ html[data-theme="light"] .boot__name { color: var(--text); }
 .nav__theme .ico-moon { display: none; }
 html[data-theme="light"] .nav__theme .ico-sun { display: none; }
 html[data-theme="light"] .nav__theme .ico-moon { display: block; }
-.nav__burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+.nav__burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: 0; color: inherit; }
 .nav__burger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s var(--ease); }
 .nav__mobile { display: none; }
 
