@@ -19,6 +19,14 @@
   setTimeout(revealChrome, 4200);
 })();
 
+/* ---------- safe sessionStorage (can throw in private mode / blocked storage) ---------- */
+function sessionGet(key) {
+  try { return sessionStorage.getItem(key); } catch (e) { return null; }
+}
+function sessionSet(key, value) {
+  try { sessionStorage.setItem(key, value); } catch (e) {}
+}
+
 /* ---------- image frames: load real file, fallback to placeholder ---------- */
 (function initFrames() {
   document.querySelectorAll('.frame[data-img]').forEach((frame) => {
@@ -50,7 +58,7 @@
   ];
 
   // skip boot if already seen this session
-  const seen = sessionStorage.getItem('av_booted');
+  const seen = sessionGet('av_booted');
   if (seen) {
     boot.classList.add('done');
     boot.style.display = 'none';
@@ -80,7 +88,7 @@
     boot.classList.add('done');
     hero.classList.add('lit');
     nav.classList.add('show');
-    sessionStorage.setItem('av_booted', '1');
+    sessionSet('av_booted', '1');
     setTimeout(() => { boot.style.display = 'none'; }, 1200);
   }, 2600);
 })();
@@ -91,9 +99,10 @@
   const cursor = document.getElementById('cursor');
   if (!el) return;
   const phrases = [
-    'Machine Learning & GenAI',
-    'Founder-in-the-making',
-    'IEEE-published researcher',
+    'End-to-end Machine Learning',
+    'Ex-founder · COEP I2I startup',
+    'Research presented at INMEC-2026',
+    '275+ LeetCode problems solved',
     'I cannot stop building.'
   ];
   let p = 0, c = 0, deleting = false;
@@ -110,7 +119,7 @@
     setTimeout(tick, deleting ? 42 : 70);
   }
   // start after boot
-  setTimeout(tick, sessionStorage.getItem('av_booted') ? 600 : 2800);
+  setTimeout(tick, sessionGet('av_booted') ? 600 : 2800);
 
   setInterval(() => { cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0'; }, 530);
 })();
@@ -150,9 +159,14 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  burger.addEventListener('click', () => mobile.classList.toggle('open'));
+  function setMenu(open) {
+    mobile.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  burger.addEventListener('click', () => setMenu(!mobile.classList.contains('open')));
   mobile.querySelectorAll('a').forEach((a) =>
-    a.addEventListener('click', () => mobile.classList.remove('open'))
+    a.addEventListener('click', () => setMenu(false))
   );
 })();
 
@@ -179,10 +193,6 @@
   }
   wrap.addEventListener('mousemove', move);
   wrap.addEventListener('mouseleave', reset);
-
-  // gentle idle float before first interaction
-  let interacted = false;
-  wrap.addEventListener('mouseenter', () => { interacted = true; });
 })();
 
 /* ---------- IMAGE FRAME TILT (cohesive 3D effect on all media boxes) ---------- */
