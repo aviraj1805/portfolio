@@ -79,4 +79,4 @@ No build step. No dependencies. Just open `index.html`.
 
 ---
 
-© 2026 Aviraj Virape
+© 2026 Aviraj Virape.
