@@ -13,7 +13,7 @@ Personal portfolio of **Aviraj Virape**, a final-year AI & Data Science student 
 | Section | Description |
 |---|---|
 | **Hero** | Intro with animated ID card and role typewriter |
-| **About** | Background and key stats (CGPA, LeetCode, live apps) |
+| **About** | Background, education, and key stats (CGPA, LeetCode, live apps) |
 | **Arsenal** | Skills across Foundations, Data Science, AI & ML, and Tools |
 | **Missions** | Live projects — Customer Churn Prediction, CreditWise, IAMARS |
 | **Journey** | Startup (Mahaguru AI), internship (Innovexis), and INMEC-2026 research |

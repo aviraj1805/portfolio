@@ -1043,3 +1043,13 @@ html[data-theme="light"] .clink:hover {
   .hero-swoosh .sw, .title-line path { stroke-dashoffset: 0; animation: none; }
 }
 .feature__body > .mission__link { margin-top: 18px; }
+
+/* Education list in About (reuses the .pub table styling) */
+.edu { margin-top: 28px; }
+.edu__head {
+  display: block; margin-bottom: 10px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-3);
+}
+.edu .pub__k { flex: 0 0 92px; }
+.edu__dim { color: var(--text-3); }
