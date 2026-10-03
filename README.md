@@ -15,7 +15,7 @@ Personal portfolio of **Aviraj Virape**, a final-year AI & Data Science student 
 | **Hero** | Intro with animated ID card and role typewriter |
 | **About** | Background, education, and key stats (CGPA, LeetCode, live apps) |
 | **Arsenal** | Skills across Foundations, Data Science, AI & ML, and Tools |
-| **Missions** | Live projects — Customer Churn Prediction, CreditWise, IAMARS |
+| **Missions** | Three featured live apps plus a grid of six more projects (two with hosted dashboards) |
 | **Journey** | Startup (Mahaguru AI), internship (Innovexis), and INMEC-2026 research |
 | **Contact** | Email, LinkedIn, GitHub, LeetCode, Instagram |
 
@@ -38,6 +38,16 @@ YOLOv8n fine-tuned on VisioDECT (0.965 mAP@0.5 on a 1,800-image held-out set), B
 [Live demo](https://huggingface.co/spaces/AvirajV/iamars-drone-tracking) · [Source](https://github.com/aviraj1805/intelligent-aerial-monitoring)
 `Python` `YOLOv8` `ByteTrack` `OpenCV` `NumPy`
 
+### More projects
+| Project | Highlights | Links |
+|---|---|---|
+| PhonePe Pulse Insights | 2018–2024 Pulse data → 9-table MySQL, 10 SQL business queries, Streamlit + Plotly | [Live charts](https://aviraj1805.github.io/portfolio/demos/phonepe/) · [Source](https://github.com/aviraj1805/PhonePe) |
+| Mental Health in Tech — EDA | 1,251 survey responses, interactive Plotly dashboard | [Live dashboard](https://aviraj1805.github.io/portfolio/demos/mental-health/) · [Source](https://github.com/aviraj1805/mental-health-survey-eda) |
+| Tesla Stock Price Forecasting | SimpleRNN vs LSTM, 1/5/10-day horizons; SimpleRNN 3.1% MAPE (1 day) | [Source](https://github.com/aviraj1805/Tesla-Stock-Price-Prediction) |
+| SmartCart Customer Segmentation | 2,240 customers, PCA (84.5% variance), 4 Ward clusters | [Source](https://github.com/aviraj1805/Smartcart-Customer-Clustering) |
+| Off-road Scene Segmentation | YOLO Hackathon 2026, DINOv2 + ConvNeXt head, 0.432 mIoU | [Source](https://github.com/aviraj1805/yolo_hackathon_MIT) |
+| Used Car Price Prediction | Random Forest R² 0.962 vs Linear Regression 0.849 | [Source](https://github.com/aviraj1805/Car-Price-Prediction) |
+
 ---
 
 ## Tech Stack
@@ -55,6 +65,8 @@ cd portfolio
 ```
 
 No build step. No dependencies. Just open `index.html`.
+
+`demos/` holds hosted copies of the PhonePe and Mental Health dashboards; they share one local Plotly bundle (`demos/plotly.min.js`).
 
 ---
 
