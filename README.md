@@ -15,13 +15,18 @@ Personal portfolio of **Aviraj Virape**, a final-year AI & Data Science student 
 | **Hero** | Intro with animated ID card and role typewriter |
 | **About** | Background, education, and key stats (CGPA, LeetCode, live apps) |
 | **Arsenal** | Skills across Foundations, Data Science, AI & ML, and Tools |
-| **Missions** | Three featured live apps plus a grid of six more projects (two with hosted dashboards) |
-| **Journey** | Startup (Mahaguru AI), internship (Innovexis), and INMEC-2026 research |
+| **Missions** | Four featured live apps, led by MahaGuru AI, plus a grid of six more projects (two with hosted dashboards) |
+| **Journey** | MahaGuru AI (startup, then an open-source rebuild that is live today), internship (Innovexis), and INMEC-2026 research |
 | **Contact** | Email, LinkedIn, GitHub, LeetCode, Instagram |
 
 ---
 
 ## Projects
+
+### MahaGuru AI — AI mentor and personalised classroom (flagship)
+An open-source platform for college students with two products. **StudentGPT** is a reflective mentor that asks before it advises, with English and Hinglish safety screening on every message. **Classroom** turns a goal into a diagnostic, a personalised roadmap, generated lessons with an AI teacher, quizzes and adaptive mastery tracking. FastAPI and React monorepo, streamed replies, provider-agnostic LLM layer, one Docker image, CI with end-to-end tests.
+[Live demo](https://mahaguru-ai.onrender.com) · [Source](https://github.com/aviraj1805/MahaGuru-V1) · [Research](https://mahaguru-ai.onrender.com/research) · [CI](https://github.com/aviraj1805/MahaGuru-V1/actions/workflows/ci.yml)
+`FastAPI` `React` `TypeScript` `PostgreSQL` `Gemini` `Docker` `Playwright`
 
 ### Customer Churn Prediction — Kaggle Playground S6E3
 XGBoost and LightGBM on ~594K telecom records with 5-fold stratified CV; XGBoost reached 0.916 mean ROC-AUC.

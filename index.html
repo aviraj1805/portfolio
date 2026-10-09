@@ -114,8 +114,8 @@
       <p class="hero__desc hero__rise" data-d="4">
         Final-year AI &amp; Data Science student (CGPA 9.2) building end-to-end
         machine learning — from EDA and feature engineering to tuned models
-        shipped as live apps. Ex-founder, with research presented at an
-        international conference.
+        shipped as live apps. Builder of MahaGuru AI, a live open-source AI mentor
+        and classroom, with research presented at an international conference.
       </p>
 
       <div class="hero__cta hero__rise" data-d="5">
@@ -228,7 +228,7 @@
       <div class="statgrid reveal" data-d="3">
         <div class="stat"><div class="stat__n">9.2</div><div class="stat__l">CGPA<br/>B.E. AI &amp; DS</div></div>
         <div class="stat"><div class="stat__n">275+</div><div class="stat__l">LeetCode<br/>problems solved</div></div>
-        <div class="stat"><div class="stat__n">3</div><div class="stat__l">ML apps<br/>live in production</div></div>
+        <div class="stat"><div class="stat__n">4</div><div class="stat__l">AI &amp; ML apps<br/>live in production</div></div>
         <div class="stat"><div class="stat__n">1</div><div class="stat__l">Startup<br/>founded</div></div>
       </div>
     </div>
@@ -376,7 +376,54 @@
       <h2 class="section-title reveal" data-d="1">Problems I attacked.<br/>Systems I built.</h2>
     </div>
 
-    <!-- Mission 01 -->
+    <!-- Mission 01: MahaGuru AI (flagship) -->
+    <article class="mission">
+      <a class="frame mission__media reveal" data-img="assets/projects/mahaguru-ai.jpg" href="https://mahaguru-ai.onrender.com" target="_blank" rel="noopener" aria-label="Open the MahaGuru AI live app">
+        <img src="assets/projects/mahaguru-ai.jpg" alt="MahaGuru AI homepage with a live StudentGPT demo" loading="lazy" decoding="async" />
+        <div class="frame__ph">
+          <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V6l8 7 8-7v13"/></svg></span>
+          <span>projects/mahaguru-ai.jpg</span>
+        </div>
+      </a>
+      <div class="mission__body reveal" data-d="1">
+        <div class="mission__no">Project 01 <span class="mission__live"><span class="dot"></span>Live</span></div>
+        <h3 class="mission__title">MahaGuru AI</h3>
+        <div class="mission__tag">An AI mentor and a personalised classroom for college students. Open source.</div>
+        <p class="mission__desc">
+          Two products that hand off to each other. <b>StudentGPT</b> is a reflective mentor that asks before
+          it advises. It runs a deterministic English and Hinglish safety screen on every message, keeps a
+          structured understanding record, and retrieves reference dialogues with BM25. <b>Classroom</b> turns
+          a goal into a diagnostic, a versioned roadmap, generated lessons with an AI teacher, quizzes, rubric-graded
+          projects and mastery tracking that adapts the plan. Built as a FastAPI and React monorepo with streamed
+          replies, guest-to-account sessions and a provider-agnostic LLM layer (Gemini by default). Shipped as one Docker image
+          with CI on every push.
+        </p>
+        <div class="mission__stack chips">
+          <span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">Gemini</span><span class="chip">SSE</span><span class="chip">Docker</span><span class="chip">Playwright</span>
+        </div>
+        <div class="mission__links">
+          <a class="mission__link" href="https://mahaguru-ai.onrender.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            Live demo
+          </a>
+          <a class="mission__link" href="https://github.com/aviraj1805/MahaGuru-V1" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.3 10.3 0 0 0 22 12.3C22 6.6 17.5 2 12 2Z"/></svg>
+            Source
+          </a>
+          <a class="mission__link" href="https://mahaguru-ai.onrender.com/research" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            Research
+          </a>
+          <a class="mission__link" href="https://github.com/aviraj1805/MahaGuru-V1/actions/workflows/ci.yml" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            CI status
+          </a>
+        </div>
+        <p class="mission__note">Hosted on Render’s free tier. The first load can take about a minute to wake up, and AI replies use a daily free quota.</p>
+      </div>
+    </article>
+
+    <!-- Mission 02 -->
     <article class="mission">
       <a class="frame mission__media reveal" data-img="assets/projects/churn.jpg" href="https://churn-predictor-aviraj.onrender.com/" target="_blank" rel="noopener" aria-label="Open the Customer Churn Predictor live app">
         <img src="assets/projects/churn.jpg" alt="Customer Churn Predictor live app" loading="lazy" decoding="async" />
@@ -386,7 +433,7 @@
         </div>
       </a>
       <div class="mission__body reveal" data-d="1">
-        <div class="mission__no">Project 01 <span class="mission__live"><span class="dot"></span>Live</span></div>
+        <div class="mission__no">Project 02 <span class="mission__live"><span class="dot"></span>Live</span></div>
         <h3 class="mission__title">Customer Churn Prediction</h3>
         <div class="mission__tag">Kaggle Playground S6E3 — who is about to leave, and why.</div>
         <p class="mission__desc">
@@ -413,7 +460,7 @@
       </div>
     </article>
 
-    <!-- Mission 02 -->
+    <!-- Mission 03 -->
     <article class="mission">
       <a class="frame mission__media reveal" data-img="assets/projects/creditwise.jpg" href="https://creditwiseloanapprovall.streamlit.app/" target="_blank" rel="noopener" aria-label="Open the CreditWise Loan Approval System live app">
         <img src="assets/projects/creditwise.jpg" alt="CreditWise Loan Approval System live app" loading="lazy" decoding="async" />
@@ -423,7 +470,7 @@
         </div>
       </a>
       <div class="mission__body reveal" data-d="1">
-        <div class="mission__no">Project 02 <span class="mission__live"><span class="dot"></span>Live</span></div>
+        <div class="mission__no">Project 03 <span class="mission__live"><span class="dot"></span>Live</span></div>
         <h3 class="mission__title">CreditWise — Loan Approval</h3>
         <div class="mission__tag">Instant, explainable lending decisions.</div>
         <p class="mission__desc">
@@ -450,7 +497,7 @@
       </div>
     </article>
 
-    <!-- Mission 03 -->
+    <!-- Mission 04 -->
     <article class="mission">
       <a class="frame mission__media reveal" data-img="assets/projects/iamars.jpg" href="https://huggingface.co/spaces/AvirajV/iamars-drone-tracking" target="_blank" rel="noopener" aria-label="Open the IAMARS drone detection and tracking demo">
         <img src="assets/projects/iamars.jpg" alt="IAMARS drone detection and tracking demo" loading="lazy" decoding="async" />
@@ -460,7 +507,7 @@
         </div>
       </a>
       <div class="mission__body reveal" data-d="1">
-        <div class="mission__no">Project 03 <span class="mission__live"><span class="dot"></span>Live</span></div>
+        <div class="mission__no">Project 04 <span class="mission__live"><span class="dot"></span>Live</span></div>
         <h3 class="mission__title">IAMARS — Drone Detection &amp; Tracking</h3>
         <div class="mission__tag">Finding small drones in the sky, in real time.</div>
         <p class="mission__desc">
@@ -582,30 +629,33 @@
     <div class="feature reveal" data-d="1">
       <div class="feature__grid">
         <div class="feature__body">
-          <span class="feature__kicker">The Startup · Founder · Jan 2024 – Nov 2025</span>
+          <span class="feature__kicker">The Startup · Founder · 2024 – 2025 · Rebuilt and live in 2026</span>
           <h3 class="feature__title">MAHAGURU AI</h3>
-          <p class="feature__sub">An AI guidance platform for students.</p>
+          <p class="feature__sub">From a startup that shut down to a product that ships.</p>
           <p class="feature__text">
-            Before a degree was in hand, I founded an AI student-guidance startup —
-            career clarity, emotional support and personalised learning plans. It
-            was selected into COEP's I2I Startup Program for mentorship and
-            incubation. I designed a multi-agent LLM architecture (FastAPI, React),
-            curated a custom student–mentor dialogue dataset, and tested early
-            prototypes with ~15 student users. It didn't survive — but every
-            constraint and every wrong turn became compounding experience.
+            I founded MahaGuru AI as a student-guidance startup. It was selected into COEP's I2I Startup
+            Program, and early prototypes were tested with around 15 students. The company shut down, but the
+            idea did not. In 2026 I rebuilt it from scratch as an open-source product: a reflective AI mentor
+            (StudentGPT) and an adaptive AI classroom, with safety screening, an evaluation suite, CI and a live
+            deployment.
           </p>
           <div class="feature__metrics">
             <div class="feature__metric"><div class="n">COEP I2I</div><div class="l">Startup<br/>Program</div></div>
-            <div class="feature__metric"><div class="n">~15</div><div class="l">Student users<br/>on prototypes</div></div>
+            <div class="feature__metric"><div class="n">2</div><div class="l">Products<br/>live today</div></div>
+            <div class="feature__metric"><div class="n">24</div><div class="l">Evaluation<br/>scenarios</div></div>
           </div>
-          <div class="feature__tagline">Shut down. Lessons kept. Hunger intact.</div>
+          <a class="mission__link" href="https://mahaguru-ai.onrender.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            Try MahaGuru AI
+          </a>
+          <div class="feature__tagline">Shut down. Rebuilt. Now live.</div>
         </div>
         <div class="feature__media">
-          <div class="frame" data-img="assets/mahaguru.png">
-          <img src="assets/mahaguru.png" alt="Mahaguru AI" loading="lazy" decoding="async" />
+          <div class="frame" data-img="assets/mahaguru-v1.jpg">
+          <img src="assets/mahaguru-v1.jpg" alt="A StudentGPT conversation in MahaGuru AI" loading="lazy" decoding="async" />
             <div class="frame__ph">
-              <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="M12 12v9M12 12 4 7.5M12 12l8-4.5"/></svg></span>
-              <span>mahaguru.png — logo / product shot</span>
+              <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3Z"/></svg></span>
+              <span>mahaguru-v1.jpg — StudentGPT conversation</span>
             </div>
           </div>
         </div>
