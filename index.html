@@ -200,8 +200,9 @@
       <p class="reveal" data-d="3">
         Today I'm a final-year AI &amp; Data Science student at APCOER, Pune
         (CGPA 9.28). I founded a startup that was selected into COEP's I2I Startup
-        Program, presented research at an international conference, and ship
-        end-to-end ML projects as live apps — not because a syllabus demanded
+        Program, presented research at an international conference, built Fix
+        with Me, a bilingual AI repair assistant with verified answers and a
+        trained safety gate, and ship end-to-end ML projects as live apps — not because a syllabus demanded
         it, but because I genuinely cannot stop building.
       </p>
       <p class="reveal" data-d="3">
@@ -696,7 +697,7 @@
   </div>
 </section>
 
-<!-- ===================== JOURNEY (Mahaguru / Innovexis / Research) ===================== -->
+<!-- ===================== JOURNEY (Fix with Me / Mahaguru / Innovexis / Research) ===================== -->
 <section class="journey section-pad" id="journey">
   <div class="wrap">
     <div class="circuit" aria-hidden="true">
@@ -705,7 +706,45 @@
     </div>
     <div class="section-head">
       <span class="label reveal" ><span class="dot"></span>The Journey</span>
-      <h2 class="section-title reveal" data-d="1">Ventures, industry,<br/>and research.</h2>
+      <h2 class="section-title reveal" data-d="1">Products, ventures,<br/>industry and research.</h2>
+    </div>
+
+    <!-- Fix with Me showcase -->
+    <div class="feature feature--wide reveal" data-d="1">
+      <div class="feature__body">
+        <span class="feature__kicker">Flagship Build · Solo · Live 2026</span>
+        <h3 class="feature__title">FIX WITH ME</h3>
+        <p class="feature__sub">An AI repair assistant that knows when to say stop.</p>
+        <p class="feature__text showcase__text">
+          Built end to end for Indian households: a user describes a broken fan, extension board, headphones or
+          toy in English, Hindi or Hinglish, by text, voice or photo. Fixy, the robot guide, asks only the
+          questions that matter, names the likely fault with a calibrated confidence, and walks through a safe,
+          sourced repair with tools, time, a rupee estimate and part links. Every claim is checked against
+          sources, and every hazard ends the session with a clear stop screen.
+        </p>
+      </div>
+      <a class="frame showcase__strip" data-img="assets/fixwithme-screens.jpg" href="https://fixwithme.avirajvirape601.workers.dev" target="_blank" rel="noopener" aria-label="Open the Fix with Me live app">
+        <img src="assets/fixwithme-screens.jpg" alt="Fix with Me screens: home, diagnosis chat, repair guide, guided step and safety stop" loading="lazy" decoding="async" />
+      </a>
+      <ol class="pipeline">
+        <li class="pipeline__step"><span class="pipeline__no">01</span><b>Safety gate</b><span>Rules in three languages plus a TF-IDF + logistic regression classifier (0.68 MB, about 0.2 ms per message). Hazard recall 67.2% to 89.1%.</span></li>
+        <li class="pipeline__step"><span class="pipeline__no">02</span><b>Bayesian diagnosis</b><span>Picks the most informative next question over a curated knowledge base. 90.7% top-1 vs 81.3% for plain Gemini.</span></li>
+        <li class="pipeline__step"><span class="pipeline__no">03</span><b>Verified answers</b><span>Hybrid RAG on Supabase (pgvector + PGroonga, RRF) with per-claim Gemma checks. 0% unsupported claims vs 34%.</span></li>
+        <li class="pipeline__step"><span class="pipeline__no">04</span><b>Shipped and tested</b><span>FastAPI and Docker on Render, Next.js PWA on Cloudflare Workers, 118 pytest tests and a CI safety gate.</span></li>
+      </ol>
+      <div class="feature__metrics mission__metrics">
+        <div class="feature__metric"><div class="n">94</div><div class="l">Benchmark<br/>cases</div></div>
+        <div class="feature__metric"><div class="n">96.0%</div><div class="l">Top-3<br/>diagnosis</div></div>
+        <div class="feature__metric"><div class="n">92.5%</div><div class="l">Correct<br/>answers</div></div>
+        <div class="feature__metric"><div class="n">100%</div><div class="l">Retrieval<br/>recall@5</div></div>
+        <div class="feature__metric"><div class="n">0%</div><div class="l">False<br/>stops</div></div>
+      </div>
+      <div class="mission__links">
+        <a class="mission__link" href="https://fixwithme.avirajvirape601.workers.dev" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg> Try Fix with Me</a>
+        <a class="mission__link" href="https://github.com/aviraj1805/FixWithMe" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg> Source</a>
+        <a class="mission__link" href="https://github.com/aviraj1805/FixWithMe/blob/main/eval/reports/qa-v1-2026-10-24.md" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg> QA report</a>
+      </div>
+      <div class="feature__tagline">Diagnose. Verify. Stop when it matters.</div>
     </div>
 
     <!-- Mahaguru AI -->
