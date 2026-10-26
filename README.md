@@ -2,9 +2,9 @@
 
 > *"I don't wait for the future. I build it."*
 
-Personal portfolio of **Aviraj Virape**, a final-year AI & Data Science student (CGPA 9.2) who builds end-to-end machine learning: EDA, scikit-learn / XGBoost models, and deployed apps. Built from scratch with vanilla HTML, CSS, and JavaScript.
+Personal portfolio of **Aviraj Virape**, a final-year AI & Data Science student (CGPA 9.28) who builds end-to-end machine learning and LLM systems: EDA, scikit-learn / XGBoost models, verified RAG, safety classifiers and deployed apps. Built from scratch with vanilla HTML, CSS, and JavaScript.
 
-🔗 **Live:** [aviraj1805.github.io/portfolio](https://aviraj1805.github.io/portfolio/)
+**Live:** [aviraj1805.github.io/portfolio](https://aviraj1805.github.io/portfolio/)
 
 ---
 
@@ -14,16 +14,31 @@ Personal portfolio of **Aviraj Virape**, a final-year AI & Data Science student 
 |---|---|
 | **Hero** | Intro with animated ID card and role typewriter |
 | **About** | Background, education, and key stats (CGPA, LeetCode, live apps) |
-| **Arsenal** | Skills across Foundations, Data Science, AI & ML, and Tools |
-| **Missions** | Four featured live apps, led by MahaGuru AI, plus a grid of six more projects (two with hosted dashboards) |
-| **Journey** | MahaGuru AI (startup, then an open-source rebuild that is live today), internship (Innovexis), and INMEC-2026 research |
+| **Arsenal** | Skills across Foundations, Data Science, AI & ML (including RAG, LLMs and LLM evaluation), and Tools |
+| **Missions** | Five featured live apps, led by Fix with Me and MahaGuru AI, plus a grid of six more projects (two with hosted dashboards) |
+| **Journey** | MahaGuru AI (COEP I2I startup, ~150 student users, then an open-source rebuild that is live today), internship (Innovexis), and INMEC-2026 research |
 | **Contact** | Email, LinkedIn, GitHub, LeetCode, Instagram |
 
 ---
 
 ## Projects
 
-### MahaGuru AI — AI mentor and personalised classroom (flagship)
+### Fix with Me — AI repair assistant for Indian households (flagship)
+![Fix with Me screens](assets/projects/fixwithme.jpg)
+
+Diagnoses household faults in English, Hindi and Hinglish from text, voice or a photo, then walks the user through a safe, sourced fix or stops the session when a professional is needed.
+
+| Component | Result |
+|---|---|
+| Bayesian diagnosis engine over a curated knowledge base | 90.7% top-1, 96.0% top-3 on FixBench-IN (94 cases); plain Gemini 81.3% |
+| Hybrid RAG on Supabase (pgvector + PGroonga, Reciprocal Rank Fusion) with per-claim Gemma verification | 100% recall@5; 92.5% correct answers and 0% unsupported claims (plain Gemini 87.5% and 34%) |
+| TF-IDF + logistic regression safety classifier (3.8K examples, 0.68 MB pure-Python runtime, about 0.2 ms per message) | Hazard recall 67.2% to 89.1%; safety-stop recall 100% (plain Gemini 84.6%), 0% false stops |
+| FastAPI + Docker on Render, Next.js PWA on Cloudflare Workers | CI with ruff, 118 pytest tests and a benchmark safety gate |
+
+[Live demo](https://fixwithme.avirajvirape601.workers.dev) · [Source](https://github.com/aviraj1805/FixWithMe) · [Benchmark report](https://github.com/aviraj1805/FixWithMe/blob/main/eval/reports/fixbench-v1-2026-10-24.md) · [Safety model card](https://github.com/aviraj1805/FixWithMe/blob/main/ml/safety_classifier/README.md)
+`Python` `FastAPI` `Gemini` `Gemma` `RAG` `Supabase` `scikit-learn` `Next.js` `Docker`
+
+### MahaGuru AI — AI mentor and personalised classroom
 An open-source platform for college students with two products. **StudentGPT** is a reflective mentor that asks before it advises, with English and Hinglish safety screening on every message. **Classroom** turns a goal into a diagnostic, a personalised roadmap, generated lessons with an AI teacher, quizzes and adaptive mastery tracking. FastAPI and React monorepo, streamed replies, provider-agnostic LLM layer, one Docker image, CI with end-to-end tests.
 [Live demo](https://mahaguru-ai.onrender.com) · [Source](https://github.com/aviraj1805/MahaGuru-V1) · [Research](https://mahaguru-ai.onrender.com/research) · [CI](https://github.com/aviraj1805/MahaGuru-V1/actions/workflows/ci.yml)
 `FastAPI` `React` `TypeScript` `PostgreSQL` `Gemini` `Docker` `Playwright`
@@ -70,6 +85,8 @@ cd portfolio
 ```
 
 No build step. No dependencies. Just open `index.html`.
+
+`assets/Aviraj_Virape_Resume.pdf` is the resume linked from the site.
 
 `demos/` holds hosted copies of the PhonePe and Mental Health dashboards; they share one local Plotly bundle (`demos/plotly.min.js`).
 
