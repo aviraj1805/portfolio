@@ -100,6 +100,7 @@ function sessionSet(key, value) {
   if (!el) return;
   const phrases = [
     'End-to-end Machine Learning',
+    'Verified RAG and LLM safety',
     'Ex-founder · COEP I2I startup',
     'Research presented at INMEC-2026',
     '275+ LeetCode problems solved',
